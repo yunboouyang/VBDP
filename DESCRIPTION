@@ -1,0 +1,12 @@
+Package: VBDP
+Title: Empirical Bayes Estimator based on DP
+Version: 0.0.0.1
+Authors: Yunbo Ouyang, Feng Liang
+Description: This package consists functions estimating sparse Gaussian sequence using a class of empirical Bayes estimators and functions constructing linear classification rule based on this class of estimators. We use Dirichlet process mixture model to estimate the prior and apply variational inference algorithm in computation.
+Depends:
+    R (>= 3.1.2)
+License: What license is it under?
+Encoding: UTF-8
+Maintainer: Yunbo Ouyang <youyang4@illinois.edu>
+LazyData: true
+RoxygenNote: 5.0.1
