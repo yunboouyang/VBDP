@@ -26,8 +26,12 @@
 #' @examples
 #' #Leukemia data set classification
 #' set.seed(100)
-#' table(DPclassifier(Train,Test,y,1,4,0.995),as.factor(c(rep("ALL",20),rep("AML",14))))
-
+#' data(leukemia)
+#' Train=as.matrix(leukemia[1:38,-1]);
+#' Test=as.matrix(leukemia[-(1:38),-1]);
+#' trainlabel=leukemia[1:38,1];
+#' testlabel=leukemia[-(1:38),1];
+#' table(DPclassifier(Train,Test,trainlabel,1,4,0.995),testlabel)
 
 
 DPclassifier=function(Train,Test,y,alpha,sigma, w, T0=10,nfolds=10,combine=FALSE,sparse=TRUE){
@@ -65,7 +69,6 @@ DPclassifier=function(Train,Test,y,alpha,sigma, w, T0=10,nfolds=10,combine=FALSE
   return(ifelse(tdata%*%a+a0>0,label[1],label[2]))
   
 }
-
 
 
 
