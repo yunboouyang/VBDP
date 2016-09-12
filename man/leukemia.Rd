@@ -6,7 +6,7 @@
 \title{Leukemia dataset to perform high dimensional classification}
 \format{An object of class \code{data.frame} with 72 rows and 7130 columns.}
 \source{
-\href{http://portals.broadinstitute.org/cgi-bin/cancer/datasets.cgi}
+\href{http://portals.broadinstitute.org/cgi-bin/cancer/datasets.cgi}{Cancer Program Datasets}
 }
 \usage{
 data(leukemia)
@@ -29,8 +29,7 @@ table(DPclassifier(Train,Test,trainlabel,1,4,0.995),testlabel)
 
 }
 \references{
-GOLUB, T. R., et al. (1999). Molecular classifcation of cancer: Class discovery and class prediction
-by gene expression monitoring. Science 286: 531¨C537.
+GOLUB, T. R., et al. (1999). Molecular classifcation of cancer: Class discovery and class prediction by gene expression monitoring. Science 286: 531¨C537.
 }
 \keyword{datasets}
 

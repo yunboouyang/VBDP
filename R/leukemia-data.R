@@ -15,11 +15,10 @@
 #' @keywords datasets
 #'
 #' 
-#' @references GOLUB, T. R., et al. (1999). Molecular classifcation of cancer: Class discovery and class prediction
-#' by gene expression monitoring. Science 286: 531¨C537.
+#' @references GOLUB, T. R., et al. (1999). Molecular classifcation of cancer: Class discovery and class prediction by gene expression monitoring. Science 286: 531¨C537.
 #' 
 #' 
-#' @source \href{http://portals.broadinstitute.org/cgi-bin/cancer/datasets.cgi}
+#' @source \href{http://portals.broadinstitute.org/cgi-bin/cancer/datasets.cgi}{Cancer Program Datasets}
 #'
 #' @examples
 #' #Leukemia data set classification
