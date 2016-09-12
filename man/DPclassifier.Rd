@@ -43,7 +43,12 @@ mean difference to eliminate irrelavent features; then apply Naive Bayes classif
 \examples{
 #Leukemia data set classification
 set.seed(100)
-table(DPclassifier(Train,Test,y,1,4,0.995),as.factor(c(rep("ALL",20),rep("AML",14))))
+data(leukemia)
+Train=as.matrix(leukemia[1:38,-1]);
+Test=as.matrix(leukemia[-(1:38),-1]);
+trainlabel=leukemia[1:38,1];
+testlabel=leukemia[-(1:38),1];
+table(DPclassifier(Train,Test,trainlabel,1,4,0.995),testlabel)
 }
 \keyword{VBDP}
 
