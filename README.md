@@ -10,6 +10,24 @@ To estimate Gaussian sequence, this package uses Dirichlet process mixture model
 
 
 ##Example
+###Estimate Sparse Gaussian Sequence using posterior mean estimator
+```{r}
+truemu=c(rep(0,900), rep(2,90),rep(10,10))
+x=rnorm(1000, truemu)
+results=sparseVBDP(x,1,6,0.01)
+prior=results$prior
+mu=dis.CD(x,prior)
+```
+###Estimate Sparse Gaussian Sequence using posterior mean estimator with thresholding
+```{r}
+truemu=c(rep(0,900), rep(2,90),rep(10,10))
+x=rnorm(1000, truemu)
+results=sparseVBDP(x,1,6,0.01)
+prior=results$prior
+mu=dis.CD.sparse(x,prior)
+```
+
+
 ###High dimensional classification of Leukemia dataset
 ```{r}
 set.seed(100)
