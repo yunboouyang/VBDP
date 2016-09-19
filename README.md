@@ -6,7 +6,7 @@ Yunbo Ouyang, Ph.D. candidate in Department of Statistics, University of Illinoi
 
 ##Description
 This package is aimed to estimate sparse Gaussian sequence and construct linear classifier based on this empirical Bayes estimator. 
-To estimate Gaussian sequence, this package uses Dirichlet process mixture model to estimate the prior.
+To estimate Gaussian sequence, this package uses Dirichlet process mixture model to estimate the prior and then calculate posterior mean or posterior mean with posterior probability thresholding.
 
 
 ##Example
