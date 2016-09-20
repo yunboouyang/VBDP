@@ -20,23 +20,29 @@
 
 
 
-dis.CD.sparse = function(x, prior.mass, h=1,kappa=0.5){
+dis.CD.sparse = function(x, prior.mass, h=1){
   # prior on mu is a discrete mixture over values provided in prior.mass
   # bandwith = h
   #check whether it is 0 or not
   n=length(prior.mass)
-  zerolocation=which(prior.mass==0)    #locate zeros, change here
-  if(length(zerolocation)==0){
-    tmp = outer(x, prior.mass, '-'); 
-    tmp = exp(-tmp^2/(2*h)); 
+  A=as.data.frame(table(prior.mass));
+  freq=A$Freq;
+  uniq=as.numeric(levels(A$prior.mass))[A$prior.mass]
+  
+  if(sum(uniq==0)==0){
+    tmp = outer(x, uniq, '-'); 
+    tmp = exp(-tmp^2/(2*h));
+    tmp=t(t(tmp)*freq)
     tmp = tmp/rowSums(tmp); 
-    return(tmp %*% prior.mass)
+    return(tmp %*% uniq)
   }else {
-    tmp = outer(x, prior.mass, '-'); 
-    tmp = exp(-tmp^2/(2*h)); 
+    location=which(uniq==0)
+    tmp = outer(x, uniq, '-'); 
+    tmp = exp(-tmp^2/(2*h));
+    tmp=t(t(tmp)*freq)
     tmp = tmp/rowSums(tmp); 
-    post=tmp %*% prior.mass;
-    post[which(rowSums(tmp[,zerolocation])>kappa)]=0;
+    post=tmp %*% uniq;
+    post[which(tmp[,location]>0.5)]=0;
     return(post)
   }
   

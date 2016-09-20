@@ -20,10 +20,14 @@
 dis.CD = function(x, prior.mass, h=1){
   # prior on mu is a discrete mixture over values provided in prior.mass
   # bandwith = h
+  A=as.data.frame(table(prior.mass));
+  freq=A$Freq;
+  uniq=as.numeric(levels(A$prior.mass))[A$prior.mass]
   n=length(prior.mass)
-  tmp = outer(x, prior.mass, '-'); 
-  tmp = exp(-tmp^2/(2*h)); 
+  tmp = outer(x, uniq, '-'); 
+  tmp = exp(-tmp^2/(2*h));
+  tmp=t(t(tmp)*freq)
   tmp = tmp/rowSums(tmp); 
-  return(tmp %*% prior.mass)
-  
+  return(tmp %*% uniq)
 }
+

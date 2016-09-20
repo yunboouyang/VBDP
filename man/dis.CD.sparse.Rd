@@ -4,7 +4,7 @@
 \alias{dis.CD.sparse}
 \title{Compute sparse posterior mean based on discrete probability mass}
 \usage{
-dis.CD.sparse(x, prior.mass, h = 1, kappa = 0.5)
+dis.CD.sparse(x, prior.mass, h = 1)
 }
 \arguments{
 \item{x}{Input n-dimensional noisy sparse Gaussian Sequence.}
